@@ -1,0 +1,64 @@
+<table class="match-list-item">
+{% for match in matches %}
+     <tr class="match">
+        <td>
+            <div class="date">{{match.start_time}}</div>
+        </td>
+        <td>
+            <div class="agent">
+                <img src="agent1.png" alt="Agent">
+            </div>
+        </td>
+        <td>
+            <div class="score {{match.color}}" style="width: 230px;">{{match.radiant_score}}-{{match.dire_score}}</div>
+        </td>
+        <td>
+            <div class="details" style="width: 80px;">
+                <div>K/D/A</div>
+                <div>{{match.kills}} / {{match.deaths}} / {{match.assists}}</div>
+            </div>
+        </td>
+            
+        <td>
+            <div class="stat-values">
+            <div>K/D</div>
+            <div>{{match.kd}}</div>
+            </div>
+        </td>
+        <td>
+            <div class="stat-values">
+                <div>GPM</div>
+                <div>{{match.gold_per_min}}</div>
+            </div>
+            
+        </td>
+        <td>
+            <div class="stat-values">
+                <div>XPM</div>
+                <div>{{match.xp_per_min}}</div>
+            </div>
+        </td>
+        <td>
+            <div class="stat-values">
+                <div>Heal</div>
+                <div>{{match.hero_healing}}</div>
+            </div>
+            
+        </td>
+        <td>
+            <div class="stat-values">
+                <div>HD</div>
+                <div>{{match.hero_damage}}</div>
+            </div>
+
+        </td>
+        <td >
+            <div class="stat-values">
+                <div>TD</div>
+                <div>{{match.tower_damage}}</div>
+            </div>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+

@@ -1,0 +1,79 @@
+{% extends 'game1/base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'game1/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <section class="search-section">
+      <h1>Track Your Game Stats</h1>
+      <input type="text" id="player-name" placeholder="Enter Account Id">
+      <button id="search-btn">Search</button>
+    </section>
+    <section class="stats-section" id="stats-section">
+      <h2>Player Stats</h2>
+      <div id="stats-container">
+        {% csrf_token %}
+        <p>Enter a player name to see their stats.</p>
+        <div class="profile-container">
+          <div class="profile-header">
+              <img src="{{player.avatar}}" alt="Avatar" id="avatar">
+              <div>
+                <h1 id="personaname">{{player.personaname}}</h1>
+                <a href="#" target="_blank" id="profilelink">View Profile</a>
+              </div>
+          </div>
+          <div class="navigation">
+            <a href="#overview">Overview</a>
+            <a href="#matches">Matches</a>
+            <a href="#performance">Performance</a>
+            <a href="#agents">Agents</a>
+            <a href="#maps">Maps</a>
+            <a href="#weapons">Weapons</a>
+            <a href="#customs">Customs</a>
+            <a href="#crosshairs">Crosshairs</a>
+            <a href="#lineups">Lineups</a>
+          </div>
+          <div id="overview" class="section">
+            <h2>Section 1</h2>
+            <div class="profile-details">
+              <div><strong>Account ID:</strong>{{player.account_id}}</div>
+              <div><strong>Steam ID:</strong> {{player.steamid}}</div>
+              <div><strong>Last Login:</strong>{{player.last_login}}</div>
+              <div><strong>Full History Time:</strong>{{player.full_history_time}}</div>
+              <div><strong>Last Match Time:</strong> {{player.last_match_time}}</div>
+              <div><strong>Country Code:</strong>{{player.loccountrycode}}</div>
+              <div><strong>Team Name:</strong>{{player.team_name}}</div>
+              <div><strong>Team Tag:</strong>{{player.team_tag}}</div>
+              <div><strong>Fantasy Role:</strong>{{player.fantasy_role}}</div>
+              <div><strong>Pro Player:</strong>{{player.is_pro}}</div>
+              <div><strong>Plus Member:</strong>{{player.plus}}</div>
+            </div>
+          </div>
+          <div id="matches" class="section">
+            <div class="match-history">
+            <div class="match-header">Match History</div>
+            <ul id="matches-list"></ul>
+            <div class="container mt-4">
+              <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                  </ul>
+              </nav>
+            </div>
+          </div>
+          </div>
+          <div id="section3" class="section">
+              <h2>Section 3</h2>
+              <p>This is the content of Section 3.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="{% static 'game1/scripts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+

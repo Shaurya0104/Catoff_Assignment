@@ -1,0 +1,37 @@
+{% extends 'game1/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'game1/pro_player.css' %}">
+{% endblock %}
+{% block content %}
+    <h2>Pro Players</h2>
+    {% for player in pro_players %}
+    <ul id="pro-players-list">
+      <li>
+        <div class="profile-container">
+          <div class="profile-header">
+              <img src="{{player.avatar}}" alt="Avatar">
+              <div>
+                  <h1>{{player.personaname}}</h1>
+                  <a href="https://steamcommunity.com/id/Newsham/" target="_blank">View Profile</a>
+              </div>
+          </div>
+          <div class="profile-details">
+              <div><strong>Account ID:</strong>{{player.account_id}}</div>
+              <div><strong>Steam ID:</strong> {{player.steamid}}</div>
+              <div><strong>Last Login:</strong>{{player.last_login}}</div>
+              <div><strong>Full History Time:</strong>{{player.full_history_time}}</div>
+              <div><strong>Last Match Time:</strong> {{player.last_match_time}}</div>
+              <div><strong>Country Code:</strong>{{player.loccountrycode}}</div>
+              <div><strong>Team Name:</strong>{{player.team_name}}</div>
+              <div><strong>Team Tag:</strong>{{player.team_tag}}</div>
+              <div><strong>Fantasy Role:</strong>{{player.fantasy_role}}</div>
+              <div><strong>Pro Player:</strong>{{player.is_pro}}</div>
+              <div><strong>Plus Member:</strong>{{player.plus}}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    {% endfor %}
+{% endblock %}
