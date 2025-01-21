@@ -98,17 +98,7 @@ Follow the steps below to set up and run the project:
 This project uses the following APIs:
 
 - **DOTA2 API**: For fetching player statistics and match history.
-- **zkFetch Middleware**: For generating zero-knowledge proofs.
+- **zkFetch**: For generating zero-knowledge proofs.
 
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Acknowledgments
-
-- DOTA2 API Documentation
-- zkFetch for providing a reliable ZKP middleware.
-- Django and Node.js communities for their excellent frameworks and tools.
 
 Enjoy exploring the world of DOTA2 with enhanced privacy using zkFetch!
