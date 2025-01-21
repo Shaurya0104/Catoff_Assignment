@@ -25,6 +25,26 @@ document.getElementById('search-btn').addEventListener('click', function () {
     })
   });
 
+
+  // document.getElementById('verify-stats-btn').addEventListener('click', function () {
+  //   fetch('verify_stats',
+  //     {
+  //       method: 'GET',
+  //       headers: {
+  //         application: 'application/json',
+  //       },
+  //     })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       // Display the response in the 'verification-result' div
+  //       document.getElementById('verification-result').textContent = data.message;
+  //     })
+  //     .catch(error => {
+  //       document.getElementById('verification-result').textContent = "An error occurred.";
+  //       console.error('Error:', error);
+  //     });
+  // });
+
 const nav_sections={"overview":"data","matches":"matches"}
 var activeSection=null;
 
